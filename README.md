@@ -1,6 +1,6 @@
 # NERVE — Local-first project memory for AI coding agents
 
-**For Codex / project handoff:** begin with [START_HERE_CODEX.md](START_HERE_CODEX.md) and [PROJECT_CONTEXT.md](PROJECT_CONTEXT.md); historical research and benchmark lineage are indexed under [research_archive](research_archive/ARCHIVE_MANIFEST.json).
+> **What this repository solves:** AI coding sessions lose verified project context between conversations, tools, and teammates. NERVE gives one project a private, local record of decisions, incidents, source references, and handoff notes—so the next authorized session can retrieve evidence instead of reconstructing the same context from scratch.
 
 **Stop starting every AI coding session from zero.** NERVE is an open-source, offline-capable, project-scoped memory server that lets compatible AI agents **record, find, and verify context** across sessions.
 
