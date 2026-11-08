@@ -1,0 +1,27 @@
+name: NERVE repeated memory benchmarks
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '15 0 * * *'
+permissions:
+  contents: read
+jobs:
+  repeated-benchmark:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install NERVE
+        run: python -m pip install -e .
+      - name: Run repeated randomized checks
+        run: python -m benchmark.repeatability --rounds 10 --targets 24 --strict --output benchmark/results/REPEATABILITY-CI.json
+      - name: Upload measured report even when a gate fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nerve-repeatability-report
+          path: benchmark/results/REPEATABILITY-CI.json
+          if-no-files-found: warn

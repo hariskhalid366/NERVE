@@ -1,0 +1,65 @@
+{
+  "chess_original": {
+    "cases": 48,
+    "nerve_correct": 38,
+    "flat_correct": 30,
+    "nerve_accuracy_pct": 79.17,
+    "flat_accuracy_pct": 62.5,
+    "nerve_wilson_95pct": [
+      65.74,
+      88.27
+    ],
+    "flat_wilson_95pct": [
+      48.36,
+      74.78
+    ],
+    "nerve_only_correct": 12,
+    "flat_only_correct": 4,
+    "paired_exact_two_sided_p": 0.076813,
+    "caveat": "Repeated questions per target and hand-authored fixtures; significance does not imply generalization."
+  },
+  "chess_stress": {
+    "cases": 24,
+    "nerve_correct": 12,
+    "flat_correct": 12,
+    "nerve_accuracy_pct": 50.0,
+    "flat_accuracy_pct": 50.0,
+    "nerve_wilson_95pct": [
+      31.43,
+      68.57
+    ],
+    "flat_wilson_95pct": [
+      31.43,
+      68.57
+    ],
+    "nerve_only_correct": 5,
+    "flat_only_correct": 5,
+    "paired_exact_two_sided_p": 1.0,
+    "caveat": "Repeated questions per target and hand-authored fixtures; significance does not imply generalization."
+  },
+  "task_mini": {
+    "cases": 24,
+    "nerve_correct": 19,
+    "flat_correct": 11,
+    "nerve_accuracy_pct": 79.17,
+    "flat_accuracy_pct": 45.83,
+    "nerve_wilson_95pct": [
+      59.53,
+      90.76
+    ],
+    "flat_wilson_95pct": [
+      27.89,
+      64.93
+    ],
+    "nerve_only_correct": 9,
+    "flat_only_correct": 1,
+    "paired_exact_two_sided_p": 0.021484,
+    "caveat": "Repeated questions per target and hand-authored fixtures; significance does not imply generalization."
+  },
+  "notes": [
+    "Wilson interval treats questions as independent and is optimistic when examples share targets.",
+    "Chess original was used to tune earlier NERVE versions; not held out.",
+    "Task mini is a separate code domain but is small and hand-authored.",
+    "All are deterministic software retrieval tests, not end-to-end LLM agent benchmarks."
+  ]
+}

@@ -1,0 +1,314 @@
+{
+  "evaluation": "NERVE deterministic offline diagnostics; no real AI-agent experiment",
+  "python": "3.13.5",
+  "os": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "sqlite_version": "3.46.1",
+  "task_mini": {
+    "index_files": 3,
+    "index_symbols": 15,
+    "positive": 24,
+    "nerve_correct": 19,
+    "flat_correct": 11,
+    "negative": [
+      {
+        "query": "Where is the Stripe webhook?",
+        "decision": "no_match",
+        "no_candidate": true
+      },
+      {
+        "query": "How do I reset the customer OAuth refresh token?",
+        "decision": "no_match",
+        "no_candidate": true
+      },
+      {
+        "query": "Which model runs the 3D chess engine?",
+        "decision": "no_match",
+        "no_candidate": true
+      },
+      {
+        "query": "Where is the video transcoding worker?",
+        "decision": "no_match",
+        "no_candidate": true
+      }
+    ],
+    "queries": [
+      {
+        "expected": "symbol:tasks.py:validate_deadline",
+        "query": "validate_deadline",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:validate_deadline",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:validate_deadline",
+        "query": "Which helper validates a date string?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:validate_deadline",
+        "flat": "symbol:tasks.py:validate_deadline",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:validate_deadline",
+        "query": "A human typed tomorrow into the deadline, and it crashed",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:validate_deadline",
+        "flat": "symbol:tasks.py:filter_tasks",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:parse_task",
+        "query": "parse_task",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:parse_task",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:parse_task",
+        "query": "Where is raw task JSON converted to structured data?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:save_tasks",
+        "flat": "symbol:tasks.py:save_tasks",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:parse_task",
+        "query": "The importer accepted a task without any title",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:parse_task",
+        "flat": "symbol:tasks.py:parse_task",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:save_tasks",
+        "query": "save_tasks",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:save_tasks",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:save_tasks",
+        "query": "Which routine persists the todo collection to disk?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:save_tasks",
+        "flat": "symbol:tasks.py:save_tasks",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:save_tasks",
+        "query": "My tasks disappeared after writing the JSON file",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:save_tasks",
+        "flat": "symbol:tasks.py:save_tasks",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:load_tasks",
+        "query": "load_tasks",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:load_tasks",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:load_tasks",
+        "query": "What reads previously saved tasks?",
+        "type": "description",
+        "nerve": "file:tasks.py",
+        "flat": "file:tasks.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:load_tasks",
+        "query": "Starting the program with no data file should return an empty list",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:load_tasks",
+        "flat": "symbol:tasks.py:load_tasks",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:filter_tasks",
+        "query": "filter_tasks",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:filter_tasks",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:filter_tasks",
+        "query": "Where do we only show open entries?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:filter_tasks",
+        "flat": "symbol:tasks.py:filter_tasks",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:filter_tasks",
+        "query": "The done-only view included incomplete work",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:filter_tasks",
+        "flat": "symbol:tasks.py:filter_tasks",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:delete_task",
+        "query": "delete_task",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:delete_task",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:delete_task",
+        "query": "Which helper removes an item by its identifier?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:parse_task",
+        "flat": "symbol:tasks.py:delete_task",
+        "nerve_correct": false,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:delete_task",
+        "query": "Deleting an entry unexpectedly removed the wrong ID",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:delete_task",
+        "flat": "symbol:tasks.py:delete_task",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:render_list",
+        "query": "render_list",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:render_list",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:render_list",
+        "query": "Who prepares the printable task list?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:parse_task",
+        "flat": "symbol:tasks.py:parse_task",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:render_list",
+        "query": "The completed status did not appear in display text",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:render_list",
+        "flat": "symbol:tasks.py:render_list",
+        "nerve_correct": true,
+        "flat_correct": true
+      },
+      {
+        "expected": "symbol:tasks.py:mark_complete",
+        "query": "mark_complete",
+        "type": "exact",
+        "nerve": "symbol:tasks.py:mark_complete",
+        "flat": "file:tasks.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:mark_complete",
+        "query": "How is an unfinished todo changed to done?",
+        "type": "description",
+        "nerve": "symbol:tasks.py:filter_tasks",
+        "flat": "symbol:tasks.py:filter_tasks",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "expected": "symbol:tasks.py:mark_complete",
+        "query": "Finishing one job also changed other task states",
+        "type": "incident",
+        "nerve": "symbol:tasks.py:mark_complete",
+        "flat": "symbol:tasks.py:mark_complete",
+        "nerve_correct": true,
+        "flat_correct": true
+      }
+    ],
+    "notice": "Second small hand-authored code fixture; not an independently sampled public benchmark"
+  },
+  "scaling": [
+    {
+      "target_count": 100,
+      "probes": 70,
+      "correct": 70,
+      "p50_ms": 1.103,
+      "p95_ms": 1.534,
+      "build_seconds": 0.04,
+      "sqlite_main_db_bytes": 4096
+    },
+    {
+      "target_count": 500,
+      "probes": 70,
+      "correct": 70,
+      "p50_ms": 5.386,
+      "p95_ms": 6.04,
+      "build_seconds": 0.18,
+      "sqlite_main_db_bytes": 135168
+    },
+    {
+      "target_count": 1500,
+      "probes": 70,
+      "correct": 70,
+      "p50_ms": 16.089,
+      "p95_ms": 18.022,
+      "build_seconds": 0.42,
+      "sqlite_main_db_bytes": 258048
+    },
+    {
+      "target_count": 3000,
+      "probes": 70,
+      "correct": 70,
+      "p50_ms": 35.079,
+      "p95_ms": 45.483,
+      "build_seconds": 0.78,
+      "sqlite_main_db_bytes": 430080
+    }
+  ],
+  "long_history": {
+    "new_events": 6201,
+    "older_incident_retrieved": true,
+    "sqlite_integrity": "ok",
+    "fts5": true
+  },
+  "payload_proxy": {
+    "selected_json_bytes": 4104,
+    "entire_recorded_db_json_bytes": 60109,
+    "reduction_percent": 93.17,
+    "notice": "JSON bytes comparison; excludes tool-call overhead, prompt framing and actual tokenizer counts"
+  },
+  "not_tested": [
+    "LongMemEval official",
+    "LoCoMo official",
+    "MemoryArena official",
+    "SWE-bench live agent tasks",
+    "real provider token counts",
+    "actual Cursor/Claude/Codex host interoperability",
+    "real cross-model handoffs",
+    "security audit by independent experts"
+  ]
+}

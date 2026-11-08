@@ -1,0 +1,15 @@
+{
+  "host": "separate local MCP Python subprocess, not global ChatGPT runtime",
+  "project": "/mnt/data/nerve-evaluation/NERVE-v0.7-candidate",
+  "scan_files": 55,
+  "scan_symbols": 210,
+  "mcp_initialize": {
+    "name": "nerve-local",
+    "version": "0.7.0"
+  },
+  "history_alias_resolves": true,
+  "retrieved_saved_note": true,
+  "retrieved_saved_test_event": true,
+  "second_alias_resolves": true,
+  "not_a_live_llm_cross_agent_trial": true
+}

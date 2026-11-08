@@ -1,0 +1,1 @@
+{"case_id": "T00Q0", "arm": "nerve", "model": "example-model", "seed": 0, "target_id": "billing:settlement", "answer": "We settled on a 47-second retry window after replay tests.", "input_tokens": 500, "output_tokens": 75, "latency_ms": 1200, "agent_a": "model-a", "agent_b": "model-b", "handoff_completed": true, "source": "EXAMPLE_DO_NOT_SCORE_AS_REAL"}

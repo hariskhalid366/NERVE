@@ -1,0 +1,359 @@
+{
+  "chess_baselines": {
+    "groups": {
+      "original": {
+        "n": 48,
+        "nerve_correct": 38,
+        "baseline_correct": 30,
+        "paired": {
+          "nerve_only_correct": 12,
+          "baseline_only_correct": 4,
+          "discordant": 16,
+          "exact_mcnemar_two_sided_p": 0.076813
+        },
+        "delta": {
+          "difference_pp": 16.67,
+          "paired_bootstrap_95pct_interval_pp": [
+            2.08,
+            33.33
+          ],
+          "repetitions": 5000,
+          "caveat": "Confidence interval is descriptive for this nonrandom test sample; it does not establish external generalization."
+        }
+      },
+      "stress": {
+        "n": 24,
+        "nerve_correct": 12,
+        "baseline_correct": 12,
+        "paired": {
+          "nerve_only_correct": 5,
+          "baseline_only_correct": 5,
+          "discordant": 10,
+          "exact_mcnemar_two_sided_p": 1.0
+        },
+        "delta": {
+          "difference_pp": 0.0,
+          "paired_bootstrap_95pct_interval_pp": [
+            -25.0,
+            25.0
+          ],
+          "repetitions": 5000,
+          "caveat": "Confidence interval is descriptive for this nonrandom test sample; it does not establish external generalization."
+        }
+      }
+    },
+    "negative_original": 10,
+    "negative_original_n": 10,
+    "negative_stress": 8,
+    "negative_stress_n": 8,
+    "context_facts_recovered": 12,
+    "context_facts_total": 12,
+    "mcp_handoff": {
+      "initialize": true,
+      "tools_exposed": 8,
+      "resolve_correct": true,
+      "context_contains_A_note": true
+    },
+    "approx_payload_reduction_percent": 90.42
+  },
+  "global_note_crowding": {
+    "target_memory_pre_global_spam": 1,
+    "target_memory_post_25_global_notes": 1,
+    "stored_target_note_still_in_database": true
+  },
+  "historical_eviction": {
+    "matched_before_325_newer_events": true,
+    "matched_after_325_newer_events": true,
+    "old_event_present_in_db": true
+  },
+  "freshness": {
+    "freshness_sequence": [
+      "source_unchanged",
+      "source_changed",
+      "source_missing"
+    ],
+    "missing_source_decision": "needs_confirmation"
+  },
+  "privacy": {
+    "env_file_not_indexed": true,
+    "api_key_redacted": true,
+    "inline_password_redacted": true,
+    "inline_token_redacted": true,
+    "authorization_redacted": true,
+    "files_indexed": 1
+  },
+  "ambiguous_and_unknown": {
+    "exact_top1": "obj-3",
+    "ambiguous_decision": "needs_confirmation",
+    "ambiguous_candidate_count": 5,
+    "unknown_decision": "no_match",
+    "unknown_candidate_count": 0
+  },
+  "own_source_unseeded": {
+    "index": {
+      "files_indexed": 13,
+      "symbols_indexed": 72,
+      "files_skipped": 0,
+      "scope": "/tmp/nerve-own-my4o662o",
+      "note": "Static index only; application state requires an observation adapter."
+    },
+    "n": 18,
+    "gold_ids_exist": 18,
+    "nerve_correct": 6,
+    "baseline_correct": 0,
+    "individual": [
+      {
+        "query": "resolve_target",
+        "gold": "symbol:nerve/core.py:resolve",
+        "exists": true,
+        "nerve": "symbol:nerve/cloud_mcp.py:resolve_target",
+        "baseline": "file:nerve/cloud_mcp.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "observe",
+        "gold": "symbol:nerve/core.py:observe",
+        "exists": true,
+        "nerve": "symbol:nerve/cloud_api.py:observe",
+        "baseline": "file:nerve/cloud_api.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "read project recent",
+        "gold": "symbol:nerve/core.py:recent",
+        "exists": true,
+        "nerve": "symbol:nerve/cloud_api.py:recent",
+        "baseline": "file:nerve/cloud_api.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "source file scanner",
+        "gold": "symbol:nerve/core.py:scan",
+        "exists": true,
+        "nerve": "symbol:nerve/core.py:_source_digest",
+        "baseline": "symbol:nerve/brief.py:project_brief",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "record a decision",
+        "gold": "symbol:nerve/core.py:remember",
+        "exists": true,
+        "nerve": "symbol:nerve/mcp_server.py:record_event",
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "remove a target",
+        "gold": "symbol:nerve/core.py:forget",
+        "exists": true,
+        "nerve": "symbol:nerve/cloud_mcp.py:get_target_context",
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "redact a key",
+        "gold": "symbol:nerve/core.py:redact",
+        "exists": true,
+        "nerve": "symbol:nerve/core.py:redact",
+        "baseline": "file:nerve/core.py",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "file revision digest",
+        "gold": "symbol:nerve/core.py:_source_digest",
+        "exists": true,
+        "nerve": "symbol:nerve/core.py:_source_digest",
+        "baseline": "symbol:nerve/brief.py:project_brief",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "get revision status",
+        "gold": "symbol:nerve/core.py:_evidence_freshness",
+        "exists": true,
+        "nerve": null,
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "validate relative file path",
+        "gold": "symbol:nerve/core.py:_allowed_relative_path",
+        "exists": true,
+        "nerve": "symbol:nerve/core.py:_allowed_relative_path",
+        "baseline": "symbol:nerve/brief.py:project_brief",
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "build a project brief",
+        "gold": "symbol:nerve/brief.py:project_brief",
+        "exists": true,
+        "nerve": "file:nerve/brief.py",
+        "baseline": "file:nerve/brief.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "install Git hook",
+        "gold": "symbol:nerve/git_observer.py:install_post_commit_hook",
+        "exists": true,
+        "nerve": "symbol:nerve/git_observer.py:install_post_commit_hook",
+        "baseline": null,
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "capture latest commit",
+        "gold": "symbol:nerve/git_observer.py:capture_commit",
+        "exists": true,
+        "nerve": "symbol:nerve/git_observer.py:capture_commit",
+        "baseline": null,
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "save Cursor config",
+        "gold": "symbol:nerve/onboarding.py:save_cursor_config",
+        "exists": true,
+        "nerve": "symbol:nerve/onboarding.py:save_cursor_config",
+        "baseline": null,
+        "nerve_correct": true,
+        "flat_correct": false
+      },
+      {
+        "query": "run command line",
+        "gold": "symbol:nerve/cli.py:main",
+        "exists": true,
+        "nerve": null,
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "serve builtin MCP stdio",
+        "gold": "symbol:nerve/mcp_stdio.py:serve",
+        "exists": true,
+        "nerve": "file:nerve/mcp_stdio.py",
+        "baseline": "file:nerve/mcp_server.py",
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "parse MCP JSONRPC request",
+        "gold": "symbol:nerve/mcp_stdio.py:handle",
+        "exists": true,
+        "nerve": "file:nerve/cloud_mcp.py",
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      },
+      {
+        "query": "route MCP invocation",
+        "gold": "symbol:nerve/mcp_stdio.py:call_tool",
+        "exists": true,
+        "nerve": "file:nerve/cloud_mcp.py",
+        "baseline": null,
+        "nerve_correct": false,
+        "flat_correct": false
+      }
+    ]
+  },
+  "scale": [
+    {
+      "targets": 100,
+      "events": 100,
+      "memories": 100,
+      "creation_seconds": 0.115,
+      "resolve": {
+        "n": 120,
+        "p50_ms": 1.157,
+        "p95_ms": 1.412,
+        "p99_ms": 2.178,
+        "max_ms": 3.254
+      },
+      "exact_alias_accuracy": "120/120",
+      "db_bytes": 122880,
+      "db_bytes_per_target_record_triplet": 1228.8,
+      "avg_resolve_response_bytes": 443
+    },
+    {
+      "targets": 500,
+      "events": 500,
+      "memories": 500,
+      "creation_seconds": 0.472,
+      "resolve": {
+        "n": 120,
+        "p50_ms": 5.656,
+        "p95_ms": 6.232,
+        "p99_ms": 8.345,
+        "max_ms": 9.156
+      },
+      "exact_alias_accuracy": "120/120",
+      "db_bytes": 356352,
+      "db_bytes_per_target_record_triplet": 712.7,
+      "avg_resolve_response_bytes": 443
+    },
+    {
+      "targets": 1500,
+      "events": 1500,
+      "memories": 1500,
+      "creation_seconds": 1.344,
+      "resolve": {
+        "n": 120,
+        "p50_ms": 16.565,
+        "p95_ms": 17.773,
+        "p99_ms": 19.219,
+        "max_ms": 22.926
+      },
+      "exact_alias_accuracy": "120/120",
+      "db_bytes": 872448,
+      "db_bytes_per_target_record_triplet": 581.6,
+      "avg_resolve_response_bytes": 443
+    },
+    {
+      "targets": 3000,
+      "events": 3000,
+      "memories": 3000,
+      "creation_seconds": 2.612,
+      "resolve": {
+        "n": 120,
+        "p50_ms": 33.914,
+        "p95_ms": 37.198,
+        "p99_ms": 38.703,
+        "max_ms": 80.129
+      },
+      "exact_alias_accuracy": "120/120",
+      "db_bytes": 1613824,
+      "db_bytes_per_target_record_triplet": 537.9,
+      "avg_resolve_response_bytes": 443
+    }
+  ],
+  "concurrent_writes": {
+    "workers": 8,
+    "events_attempted": 600,
+    "memories_attempted": 600,
+    "events_persisted": 600,
+    "memories_persisted": 600,
+    "worker_failures": [],
+    "duration_seconds": 0.535,
+    "sqlite_integrity": "ok"
+  },
+  "crash_recovery": {
+    "committed_note_survives_abrupt_process_exit": true,
+    "sqlite_integrity": "ok"
+  },
+  "project_isolation": {
+    "A_target_not_visible_in_B": true,
+    "B_recent_has_no_A_memory": true
+  },
+  "elapsed_seconds": 14.136,
+  "code_version": "0.7.0-rc2"
+}

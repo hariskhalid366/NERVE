@@ -1,0 +1,11 @@
+{
+  "full_history_bytes": 25313,
+  "query_count": 48,
+  "avg_retrieved_bytes": 2606.9,
+  "median_retrieved_bytes": 2766.0,
+  "max_retrieved_bytes": 3138,
+  "min_retrieved_bytes": 1449,
+  "avg_byte_reduction_percent": 89.7,
+  "correct_retrievals": 38,
+  "qualification": "This is only serialization size, not actual provider token counts. The all-history baseline is intentionally naive and context-only retrieval may omit useful information."
+}

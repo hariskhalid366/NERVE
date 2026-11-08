@@ -1,0 +1,284 @@
+{
+  "method": "Randomized offline retrieval and storage repeats, not actual model/agent performance",
+  "configuration": {
+    "rounds": 20,
+    "targets_per_round": 48,
+    "seed": 20261108,
+    "python": "3.13.5"
+  },
+  "summary": {
+    "exact_label": {
+      "nerve_correct": 960,
+      "flat_correct": 960,
+      "total": 960,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        99.6,
+        100.0
+      ]
+    },
+    "exact_id": {
+      "nerve_correct": 960,
+      "flat_correct": 960,
+      "total": 960,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        99.6,
+        100.0
+      ]
+    },
+    "alias": {
+      "nerve_correct": 960,
+      "flat_correct": 960,
+      "total": 960,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        99.6,
+        100.0
+      ]
+    },
+    "historical": {
+      "nerve_correct": 960,
+      "flat_correct": 960,
+      "total": 960,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        99.6,
+        100.0
+      ]
+    },
+    "unsupported_no_candidate": {
+      "correct": 240,
+      "total": 240,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        98.42,
+        100.0
+      ]
+    },
+    "unsupported_no_supported_decision": {
+      "correct": 240,
+      "total": 240,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        98.42,
+        100.0
+      ]
+    },
+    "ambiguous_flagged": {
+      "correct": 20,
+      "total": 20,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        83.89,
+        100.0
+      ]
+    },
+    "historical_after_noise_correct": {
+      "correct": 20,
+      "total": 20,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        83.89,
+        100.0
+      ]
+    },
+    "new_process_success": {
+      "correct": 20,
+      "total": 20,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        83.89,
+        100.0
+      ]
+    },
+    "sqlite_integrity_ok": {
+      "correct": 20,
+      "total": 20,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        83.89,
+        100.0
+      ]
+    }
+  },
+  "semantic": {
+    "total": 8,
+    "correct": 0,
+    "cases": [
+      {
+        "query": "the routine that reads a compact chess-position string",
+        "expected": "parse",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "how the match knows nobody can make another legal turn",
+        "expected": "draw",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "the helper writing the to-do collection onto the hard drive",
+        "expected": "save",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "where the system confirms a person is allowed to sign in",
+        "expected": "auth",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "which component decides how long the timer has left",
+        "expected": "clock",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "the logic that arranges entries in deadline order",
+        "expected": "sort",
+        "predicted": "clock",
+        "correct": false
+      },
+      {
+        "query": "where requests avoid repeatedly fetching the same information",
+        "expected": "cache",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "what draws the screen elements for the browser",
+        "expected": "render",
+        "predicted": null,
+        "correct": false
+      }
+    ],
+    "limitation": "Small hand-written out-of-vocabulary paraphrases; not an independent model benchmark."
+  },
+  "context_depth": {
+    "target_id": "target",
+    "notes_inserted_after_old": 160,
+    "records_persisted": 161,
+    "old_note_visible_in_default_context": false,
+    "old_note_retrieval_via_resolve_correct": true,
+    "old_note_recovered_by_evidence_search": true,
+    "limit": 12,
+    "note": "Old record may persist but is not present in bounded recent context; retrieval is a separate capability."
+  },
+  "latency_per_round_ms": [
+    {
+      "p50": 0.488,
+      "p95": 1.202,
+      "p99": 1.446
+    },
+    {
+      "p50": 0.561,
+      "p95": 1.328,
+      "p99": 1.709
+    },
+    {
+      "p50": 0.579,
+      "p95": 1.46,
+      "p99": 1.764
+    },
+    {
+      "p50": 0.542,
+      "p95": 1.399,
+      "p99": 1.768
+    },
+    {
+      "p50": 0.569,
+      "p95": 1.419,
+      "p99": 1.553
+    },
+    {
+      "p50": 0.498,
+      "p95": 1.214,
+      "p99": 1.324
+    },
+    {
+      "p50": 0.519,
+      "p95": 1.381,
+      "p99": 1.613
+    },
+    {
+      "p50": 0.546,
+      "p95": 1.33,
+      "p99": 1.597
+    },
+    {
+      "p50": 0.525,
+      "p95": 1.43,
+      "p99": 1.813
+    },
+    {
+      "p50": 0.529,
+      "p95": 1.28,
+      "p99": 1.569
+    },
+    {
+      "p50": 0.516,
+      "p95": 1.258,
+      "p99": 1.61
+    },
+    {
+      "p50": 0.523,
+      "p95": 1.319,
+      "p99": 7.44
+    },
+    {
+      "p50": 0.494,
+      "p95": 1.154,
+      "p99": 1.329
+    },
+    {
+      "p50": 0.552,
+      "p95": 1.469,
+      "p99": 2.953
+    },
+    {
+      "p50": 0.498,
+      "p95": 1.25,
+      "p99": 1.508
+    },
+    {
+      "p50": 0.495,
+      "p95": 1.173,
+      "p99": 1.501
+    },
+    {
+      "p50": 0.489,
+      "p95": 1.171,
+      "p99": 1.313
+    },
+    {
+      "p50": 0.517,
+      "p95": 1.312,
+      "p99": 1.713
+    },
+    {
+      "p50": 0.559,
+      "p95": 1.403,
+      "p99": 1.676
+    },
+    {
+      "p50": 0.486,
+      "p95": 1.117,
+      "p99": 1.189
+    }
+  ],
+  "elapsed_seconds": 21.66,
+  "failures": [],
+  "limitations": [
+    "Synthetic unique-token retrieval is easier than human descriptions.",
+    "Reused project domain does not support external validity.",
+    "Wilson confidence intervals assume independent queries; this is optimistic for shared targets.",
+    "No model API tokens, real agent handoff tasks, official external benchmark or production security assessment."
+  ]
+}

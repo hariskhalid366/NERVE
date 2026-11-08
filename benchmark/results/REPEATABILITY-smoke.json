@@ -1,0 +1,198 @@
+{
+  "method": "Randomized offline retrieval and storage repeats, not actual model/agent performance",
+  "configuration": {
+    "rounds": 3,
+    "targets_per_round": 20,
+    "seed": 20261108,
+    "python": "3.13.5"
+  },
+  "summary": {
+    "exact_label": {
+      "nerve_correct": 60,
+      "flat_correct": 60,
+      "total": 60,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        93.98,
+        100.0
+      ]
+    },
+    "exact_id": {
+      "nerve_correct": 60,
+      "flat_correct": 0,
+      "total": 60,
+      "nerve_pct": 100.0,
+      "flat_pct": 0.0,
+      "wilson_95_pct": [
+        93.98,
+        100.0
+      ]
+    },
+    "alias": {
+      "nerve_correct": 60,
+      "flat_correct": 60,
+      "total": 60,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        93.98,
+        100.0
+      ]
+    },
+    "historical": {
+      "nerve_correct": 60,
+      "flat_correct": 60,
+      "total": 60,
+      "nerve_pct": 100.0,
+      "flat_pct": 100.0,
+      "wilson_95_pct": [
+        93.98,
+        100.0
+      ]
+    },
+    "unsupported_no_candidate": {
+      "correct": 30,
+      "total": 30,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        88.65,
+        100.0
+      ]
+    },
+    "unsupported_no_supported_decision": {
+      "correct": 30,
+      "total": 30,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        88.65,
+        100.0
+      ]
+    },
+    "ambiguous_flagged": {
+      "correct": 3,
+      "total": 3,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        43.85,
+        100.0
+      ]
+    },
+    "historical_after_noise_correct": {
+      "correct": 3,
+      "total": 3,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        43.85,
+        100.0
+      ]
+    },
+    "new_process_success": {
+      "correct": 3,
+      "total": 3,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        43.85,
+        100.0
+      ]
+    },
+    "sqlite_integrity_ok": {
+      "correct": 3,
+      "total": 3,
+      "pct": 100.0,
+      "wilson_95_pct": [
+        43.85,
+        100.0
+      ]
+    }
+  },
+  "semantic": {
+    "total": 8,
+    "correct": 0,
+    "cases": [
+      {
+        "query": "the routine that reads a compact chess-position string",
+        "expected": "parse",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "how the match knows nobody can make another legal turn",
+        "expected": "draw",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "the helper writing the to-do collection onto the hard drive",
+        "expected": "save",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "where the system confirms a person is allowed to sign in",
+        "expected": "auth",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "which component decides how long the timer has left",
+        "expected": "clock",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "the logic that arranges entries in deadline order",
+        "expected": "sort",
+        "predicted": "clock",
+        "correct": false
+      },
+      {
+        "query": "where requests avoid repeatedly fetching the same information",
+        "expected": "cache",
+        "predicted": null,
+        "correct": false
+      },
+      {
+        "query": "what draws the screen elements for the browser",
+        "expected": "render",
+        "predicted": null,
+        "correct": false
+      }
+    ],
+    "limitation": "Small hand-written out-of-vocabulary paraphrases; not an independent model benchmark."
+  },
+  "context_depth": {
+    "target_id": "target",
+    "notes_inserted_after_old": 160,
+    "records_persisted": 161,
+    "old_note_visible_in_default_context": false,
+    "old_note_retrieval_via_resolve_correct": true,
+    "limit": 12,
+    "note": "Old record may persist but is not present in bounded recent context; retrieval is a separate capability."
+  },
+  "latency_per_round_ms": [
+    {
+      "p50": 0.233,
+      "p95": 0.638,
+      "p99": 0.868
+    },
+    {
+      "p50": 0.226,
+      "p95": 0.522,
+      "p99": 0.612
+    },
+    {
+      "p50": 0.225,
+      "p95": 0.531,
+      "p99": 0.672
+    }
+  ],
+  "elapsed_seconds": 2.7,
+  "failures": [],
+  "limitations": [
+    "Synthetic unique-token retrieval is easier than human descriptions.",
+    "Reused project domain does not support external validity.",
+    "Wilson confidence intervals assume independent queries; this is optimistic for shared targets.",
+    "No model API tokens, real agent handoff tasks, official external benchmark or production security assessment."
+  ]
+}

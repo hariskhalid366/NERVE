@@ -1,0 +1,10 @@
+.git
+.venv
+.env*
+.nerve
+.nerve-cloud-data
+__pycache__
+*.pyc
+*.sqlite*
+tests
+examples

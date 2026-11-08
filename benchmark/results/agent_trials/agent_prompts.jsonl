@@ -1,0 +1,80 @@
+{"case_id": "T00Q0", "query": "Settlement queue", "kind": "label"}
+{"case_id": "T00Q1", "query": "payouts pipeline", "kind": "alias"}
+{"case_id": "T00Q2", "query": "ledger mismatch batch replay", "kind": "incident"}
+{"case_id": "T00Q3", "query": "why did disbursement processing break?", "kind": "paraphrase"}
+{"case_id": "T01Q0", "query": "Invitation gate", "kind": "label"}
+{"case_id": "T01Q1", "query": "team invite entry", "kind": "alias"}
+{"case_id": "T01Q2", "query": "expired invitation blank toast", "kind": "incident"}
+{"case_id": "T01Q3", "query": "why couldn't the new member join?", "kind": "paraphrase"}
+{"case_id": "T02Q0", "query": "Synonym index", "kind": "label"}
+{"case_id": "T02Q1", "query": "keyword matcher", "kind": "alias"}
+{"case_id": "T02Q2", "query": "plural search stemming", "kind": "incident"}
+{"case_id": "T02Q3", "query": "why are plurals missing from lookup?", "kind": "paraphrase"}
+{"case_id": "T03Q0", "query": "Recurrence builder", "kind": "label"}
+{"case_id": "T03Q1", "query": "repeat schedule drawer", "kind": "alias"}
+{"case_id": "T03Q2", "query": "monthly repeat leap day", "kind": "incident"}
+{"case_id": "T03Q3", "query": "why are anniversary meetings missing?", "kind": "paraphrase"}
+{"case_id": "T04Q0", "query": "Shipping estimator", "kind": "label"}
+{"case_id": "T04Q1", "query": "postage calculator", "kind": "alias"}
+{"case_id": "T04Q2", "query": "zone rates stale address update", "kind": "incident"}
+{"case_id": "T04Q3", "query": "why does delivery price ignore the new address?", "kind": "paraphrase"}
+{"case_id": "T05Q0", "query": "Export worker", "kind": "label"}
+{"case_id": "T05Q1", "query": "csv job processor", "kind": "alias"}
+{"case_id": "T05Q2", "query": "csv ordering reversed locale", "kind": "incident"}
+{"case_id": "T05Q3", "query": "why is the downloaded report ordered differently?", "kind": "paraphrase"}
+{"case_id": "T06Q0", "query": "Quiet hours", "kind": "label"}
+{"case_id": "T06Q1", "query": "do not disturb scheduler", "kind": "alias"}
+{"case_id": "T06Q2", "query": "push escaped midnight", "kind": "incident"}
+{"case_id": "T06Q3", "query": "why was my phone buzzing while I slept?", "kind": "paraphrase"}
+{"case_id": "T07Q0", "query": "Stock reconciliation", "kind": "label"}
+{"case_id": "T07Q1", "query": "warehouse adjustment task", "kind": "alias"}
+{"case_id": "T07Q2", "query": "concurrent stock count overwritten", "kind": "incident"}
+{"case_id": "T07Q3", "query": "why were warehouse quantities inconsistent?", "kind": "paraphrase"}
+{"case_id": "T08Q0", "query": "Transcript cleaner", "kind": "label"}
+{"case_id": "T08Q1", "query": "speech segment normalizer", "kind": "alias"}
+{"case_id": "T08Q2", "query": "apostrophes transcript merge", "kind": "incident"}
+{"case_id": "T08Q3", "query": "why is the recorded dialogue malformed?", "kind": "paraphrase"}
+{"case_id": "T09Q0", "query": "Thumbnail pipeline", "kind": "label"}
+{"case_id": "T09Q1", "query": "preview image queue", "kind": "alias"}
+{"case_id": "T09Q2", "query": "portrait rotated thumbnails", "kind": "incident"}
+{"case_id": "T09Q3", "query": "why do the photos display sideways?", "kind": "paraphrase"}
+{"case_id": "T10Q0", "query": "Avatar uploader", "kind": "label"}
+{"case_id": "T10Q1", "query": "portrait image upload", "kind": "alias"}
+{"case_id": "T10Q2", "query": "upload stalled weak wifi", "kind": "incident"}
+{"case_id": "T10Q3", "query": "why did my profile picture fail to save?", "kind": "paraphrase"}
+{"case_id": "T11Q0", "query": "Marker clusterer", "kind": "label"}
+{"case_id": "T11Q1", "query": "geographic pin grouping", "kind": "alias"}
+{"case_id": "T11Q2", "query": "pins vanished high zoom", "kind": "incident"}
+{"case_id": "T11Q3", "query": "why are some places missing on the map?", "kind": "paraphrase"}
+{"case_id": "T12Q0", "query": "Feature flag loader", "kind": "label"}
+{"case_id": "T12Q1", "query": "runtime toggles", "kind": "alias"}
+{"case_id": "T12Q2", "query": "feature flags before login", "kind": "incident"}
+{"case_id": "T12Q3", "query": "why did another user's experiments appear?", "kind": "paraphrase"}
+{"case_id": "T13Q0", "query": "Signature pad", "kind": "label"}
+{"case_id": "T13Q1", "query": "signing canvas", "kind": "alias"}
+{"case_id": "T13Q2", "query": "strokes shifted rotation", "kind": "incident"}
+{"case_id": "T13Q3", "query": "why did the signed form look distorted?", "kind": "paraphrase"}
+{"case_id": "T14Q0", "query": "Anomaly detector", "kind": "label"}
+{"case_id": "T14Q1", "query": "spike warning service", "kind": "alias"}
+{"case_id": "T14Q2", "query": "holiday dips false alerts", "kind": "incident"}
+{"case_id": "T14Q3", "query": "why did the monitoring alarm trigger on vacation?", "kind": "paraphrase"}
+{"case_id": "T15Q0", "query": "Snapshot job", "kind": "label"}
+{"case_id": "T15Q1", "query": "nightly restore point", "kind": "alias"}
+{"case_id": "T15Q2", "query": "compressed backup checksum", "kind": "incident"}
+{"case_id": "T15Q3", "query": "why could the recovery archive be corrupted?", "kind": "paraphrase"}
+{"case_id": "T16Q0", "query": "Refund handler", "kind": "label"}
+{"case_id": "T16Q1", "query": "return payments queue", "kind": "alias"}
+{"case_id": "T16Q2", "query": "duplicate refund webhook replay", "kind": "incident"}
+{"case_id": "T16Q3", "query": "why was the customer reimbursed twice?", "kind": "paraphrase"}
+{"case_id": "T17Q0", "query": "Mention resolver", "kind": "label"}
+{"case_id": "T17Q1", "query": "user ping finder", "kind": "alias"}
+{"case_id": "T17Q2", "query": "mentions dotted display names", "kind": "incident"}
+{"case_id": "T17Q3", "query": "why didn't the colleague get notified?", "kind": "paraphrase"}
+{"case_id": "T18Q0", "query": "Device registry", "kind": "label"}
+{"case_id": "T18Q1", "query": "trusted devices list", "kind": "alias"}
+{"case_id": "T18Q2", "query": "revoked device active connection", "kind": "incident"}
+{"case_id": "T18Q3", "query": "why could a removed phone still sign in?", "kind": "paraphrase"}
+{"case_id": "T19Q0", "query": "Dependency graph", "kind": "label"}
+{"case_id": "T19Q1", "query": "blocker map", "kind": "alias"}
+{"case_id": "T19Q2", "query": "circular dependency import", "kind": "incident"}
+{"case_id": "T19Q3", "query": "why are the tasks deadlocked?", "kind": "paraphrase"}

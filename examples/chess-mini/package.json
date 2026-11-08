@@ -1,0 +1,1 @@
+{"name":"nerve-little-chess-demo","private":true,"type":"module","scripts":{"test":"node --test tests/*.test.mjs","serve":"python -m http.server 8000"}}

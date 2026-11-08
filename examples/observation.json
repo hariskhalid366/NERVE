@@ -1,0 +1,16 @@
+{
+  "target_id": "ui:settings:save-button",
+  "label": "Save settings button",
+  "kind": "ui-element",
+  "description": "Primary button that persists settings changes",
+  "aliases": ["save button", "save changes", "settings submit"],
+  "source_path": "",
+  "locator": "accessibility-id:settings-save",
+  "state": {
+    "enabled": true,
+    "visible": true,
+    "screen": "Settings",
+    "last_error": "Timeout while saving",
+    "authorization": "this is automatically redacted"
+  }
+}

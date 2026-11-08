@@ -1,0 +1,703 @@
+{
+  "method": "deterministic chess dogfood; no LLM or provider tokens",
+  "source_project": "examples/chess-mini",
+  "environment": "fresh temp copy and separate MCP subprocess",
+  "index": {
+    "files_indexed": 6,
+    "symbols_indexed": 46,
+    "files_skipped": 0,
+    "scope": "/tmp/nerve-chess-bench-au0yhira/chess-mini",
+    "note": "Static index only; application state requires an observation adapter."
+  },
+  "categories": {
+    "exact": {
+      "cases": 12,
+      "nerve_correct": 12,
+      "flat_correct": 2
+    },
+    "alias": {
+      "cases": 12,
+      "nerve_correct": 12,
+      "flat_correct": 12
+    },
+    "history": {
+      "cases": 12,
+      "nerve_correct": 5,
+      "flat_correct": 10
+    },
+    "paraphrase": {
+      "cases": 12,
+      "nerve_correct": 3,
+      "flat_correct": 6
+    }
+  },
+  "overall": {
+    "known_queries": 48,
+    "nerve_top1_correct": 32,
+    "flat_top1_correct": 30,
+    "negative_queries": 10,
+    "negative_no_candidate": 1,
+    "negative_no_supported_candidate": 9,
+    "explicit_id_context_facts": 12,
+    "explicit_id_context_total": 12,
+    "avg_selected_payload_pieces": 782.9,
+    "full_history_payload_pieces": 9043,
+    "payload_reduction_vs_full_history_percent": 91.34
+  },
+  "mcp_handoff": {
+    "initialize": true,
+    "tools_exposed": 8,
+    "resolve_correct": true,
+    "context_contains_A_note": true
+  },
+  "negative_cases": [
+    {
+      "query": "where is the payment checkout gateway",
+      "candidate_count": 5,
+      "decision": "supported_candidate",
+      "no_candidate": false,
+      "no_supported_candidate": false
+    },
+    {
+      "query": "the missing multiplayer matchmaking server",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "fix the neural network training optimizer",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "why did the database delete customer accounts",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "the VR helmet tracking layer",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "video transcoding codec options",
+      "candidate_count": 1,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "which SQL migration altered the inventory schema",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "bitcoin wallet private key storage",
+      "candidate_count": 0,
+      "decision": "no_match",
+      "no_candidate": true,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "how is satellite telemetry processed",
+      "candidate_count": 3,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    },
+    {
+      "query": "the PDF printer queue scheduling",
+      "candidate_count": 5,
+      "decision": "needs_confirmation",
+      "no_candidate": false,
+      "no_supported_candidate": true
+    }
+  ],
+  "per_case": [
+    {
+      "category": "exact",
+      "query": "legalMoves",
+      "gold": "symbol:chess.mjs:legalMoves",
+      "nerve_prediction": "symbol:chess.mjs:legalMoves",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 647,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "legal destinations",
+      "gold": "symbol:chess.mjs:legalMoves",
+      "nerve_prediction": "symbol:chess.mjs:legalMoves",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:legalMoves",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 750,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "the pinned rook moved sideways and exposed the king",
+      "gold": "symbol:chess.mjs:legalMoves",
+      "nerve_prediction": "symbol:chess.mjs:legalMoves",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:legalMoves",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 981,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the function that filters moves that put your own monarch in danger",
+      "gold": "symbol:chess.mjs:legalMoves",
+      "nerve_prediction": "symbol:chess.mjs:legalMoves",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:legalMoves",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 978,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "parseFen",
+      "gold": "symbol:chess.mjs:parseFen",
+      "nerve_prediction": "symbol:chess.mjs:parseFen",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 645,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "board notation parser",
+      "gold": "symbol:chess.mjs:parseFen",
+      "nerve_prediction": "symbol:chess.mjs:parseFen",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:parseFen",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 961,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "starting board queens were on the wrong home files",
+      "gold": "symbol:chess.mjs:parseFen",
+      "nerve_prediction": "file:style.css",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:parseFen",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 978,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the importer that creates a position from a compact text notation",
+      "gold": "symbol:chess.mjs:parseFen",
+      "nerve_prediction": "symbol:chess.mjs:parseFen",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:parseFen",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 971,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "apply",
+      "gold": "symbol:chess.mjs:apply",
+      "nerve_prediction": "symbol:chess.mjs:apply",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 646,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "move transition",
+      "gold": "symbol:chess.mjs:apply",
+      "nerve_prediction": "symbol:chess.mjs:apply",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:apply",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 749,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "special capture failed to remove the adjacent pawn",
+      "gold": "symbol:chess.mjs:apply",
+      "nerve_prediction": "symbol:chess.mjs:to",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:apply",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 784,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the state updater preserving rights when pieces change squares",
+      "gold": "symbol:chess.mjs:apply",
+      "nerve_prediction": "symbol:app.mjs:state",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:apply",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 779,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "gameStatus",
+      "gold": "symbol:chess.mjs:gameStatus",
+      "nerve_prediction": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 643,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "endgame detector",
+      "gold": "symbol:chess.mjs:gameStatus",
+      "nerve_prediction": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:gameStatus",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 648,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "fools mate winner was not announced",
+      "gold": "symbol:chess.mjs:gameStatus",
+      "nerve_prediction": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:gameStatus",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 930,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "which calculation decides whether the match has finished",
+      "gold": "symbol:chess.mjs:gameStatus",
+      "nerve_prediction": "symbol:chess.mjs:parseFen",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:insufficient",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 954,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "positionKey",
+      "gold": "symbol:chess.mjs:positionKey",
+      "nerve_prediction": "symbol:chess.mjs:positionKey",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 643,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "repetition signature",
+      "gold": "symbol:chess.mjs:positionKey",
+      "nerve_prediction": "symbol:chess.mjs:positionKey",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:positionKey",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 662,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "knights returning home did not count as same board",
+      "gold": "symbol:chess.mjs:positionKey",
+      "nerve_prediction": "symbol:chess.mjs:home",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:positionKey",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 795,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "where identical states are recognized across a series of turns",
+      "gold": "symbol:chess.mjs:positionKey",
+      "nerve_prediction": "symbol:app.mjs:states",
+      "nerve_correct": false,
+      "flat_prediction": "file:app.mjs",
+      "flat_correct": false,
+      "decision": "needs_confirmation",
+      "payload_pieces": 756,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "selectSquare",
+      "gold": "symbol:app.mjs:selectSquare",
+      "nerve_prediction": "symbol:app.mjs:selectSquare",
+      "nerve_correct": true,
+      "flat_prediction": "file:app.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 642,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "tile click handler",
+      "gold": "symbol:app.mjs:selectSquare",
+      "nerve_prediction": "symbol:app.mjs:selectSquare",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:app.mjs:selectSquare",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 650,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "clicking an impossible destination changed pieces",
+      "gold": "symbol:app.mjs:selectSquare",
+      "nerve_prediction": "symbol:chess.mjs:pieces",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:app.mjs:selectSquare",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 760,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the code listening when a person touches a board cell",
+      "gold": "symbol:app.mjs:selectSquare",
+      "nerve_prediction": "file:style.css",
+      "nerve_correct": false,
+      "flat_prediction": "file:index.html",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 979,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "showPromotion",
+      "gold": "symbol:app.mjs:showPromotion",
+      "nerve_prediction": "symbol:app.mjs:showPromotion",
+      "nerve_correct": true,
+      "flat_prediction": "file:app.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 644,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "upgrade chooser",
+      "gold": "symbol:app.mjs:showPromotion",
+      "nerve_prediction": "symbol:app.mjs:showPromotion",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:app.mjs:showPromotion",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 557,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "pawn reaching last rank had no knight option",
+      "gold": "symbol:app.mjs:showPromotion",
+      "nerve_prediction": "symbol:app.mjs:showPromotion",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:app.mjs:showPromotion",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 849,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the popup where a player chooses a new piece",
+      "gold": "symbol:app.mjs:showPromotion",
+      "nerve_prediction": "symbol:app.mjs:selectSquare",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:app.mjs:selectSquare",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 944,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "render",
+      "gold": "symbol:app.mjs:render",
+      "nerve_prediction": "symbol:app.mjs:render",
+      "nerve_correct": true,
+      "flat_prediction": "file:app.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 642,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "board painter",
+      "gold": "symbol:app.mjs:render",
+      "nerve_prediction": "symbol:app.mjs:render",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:app.mjs:render",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 949,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "the grid was not refreshed after undo",
+      "gold": "symbol:app.mjs:render",
+      "nerve_prediction": "symbol:chess.mjs:apply",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:apply",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 954,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "where the visible squares and pieces get painted again",
+      "gold": "symbol:app.mjs:render",
+      "nerve_prediction": "symbol:chess.mjs:pieces",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:legalMoves",
+      "flat_correct": false,
+      "decision": "needs_confirmation",
+      "payload_pieces": 783,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "style.css",
+      "gold": "file:style.css",
+      "nerve_prediction": "file:style.css",
+      "nerve_correct": true,
+      "flat_prediction": "file:style.css",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 560,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "mobile layout",
+      "gold": "file:style.css",
+      "nerve_prediction": "file:style.css",
+      "nerve_correct": true,
+      "flat_prediction": "file:style.css",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 547,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "board became non-square at small widths",
+      "gold": "file:style.css",
+      "nerve_prediction": "symbol:app.mjs:render",
+      "nerve_correct": false,
+      "flat_prediction": "file:style.css",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 973,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the file responsible for touch-friendly cell dimensions",
+      "gold": "file:style.css",
+      "nerve_prediction": "symbol:app.mjs:selectSquare",
+      "nerve_correct": false,
+      "flat_prediction": "file:style.css",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 952,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "index.html",
+      "gold": "file:index.html",
+      "nerve_prediction": "file:index.html",
+      "nerve_correct": true,
+      "flat_prediction": "file:index.html",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 934,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "document shell",
+      "gold": "file:index.html",
+      "nerve_prediction": "file:index.html",
+      "nerve_correct": true,
+      "flat_prediction": "file:index.html",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 547,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "the status area was not announced to assistive technology",
+      "gold": "file:index.html",
+      "nerve_prediction": "symbol:chess.mjs:to",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:isAttacked",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 781,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "which page defines the controls and live game status",
+      "gold": "file:index.html",
+      "nerve_prediction": "file:index.html",
+      "nerve_correct": true,
+      "flat_prediction": "file:index.html",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 986,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "insufficient",
+      "gold": "symbol:chess.mjs:insufficient",
+      "nerve_prediction": "symbol:chess.mjs:insufficient",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 647,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "material draw",
+      "gold": "symbol:chess.mjs:insufficient",
+      "nerve_prediction": "symbol:chess.mjs:insufficient",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:insufficient",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 660,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "kings alone were not declared a draw",
+      "gold": "symbol:chess.mjs:insufficient",
+      "nerve_prediction": "symbol:chess.mjs:insufficient",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:insufficient",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 941,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "the logic determining whether victory is impossible from remaining pieces",
+      "gold": "symbol:chess.mjs:insufficient",
+      "nerve_prediction": "symbol:chess.mjs:pieces",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:chess.mjs:insufficient",
+      "flat_correct": true,
+      "decision": "needs_confirmation",
+      "payload_pieces": 778,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "exact",
+      "query": "isAttacked",
+      "gold": "symbol:chess.mjs:isAttacked",
+      "nerve_prediction": "symbol:chess.mjs:isAttacked",
+      "nerve_correct": true,
+      "flat_prediction": "file:chess.mjs",
+      "flat_correct": false,
+      "decision": "supported_candidate",
+      "payload_pieces": 637,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "alias",
+      "query": "threat detector",
+      "gold": "symbol:chess.mjs:isAttacked",
+      "nerve_prediction": "symbol:chess.mjs:isAttacked",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:isAttacked",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 642,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "history",
+      "query": "the king crossed a defended cell while castling",
+      "gold": "symbol:chess.mjs:isAttacked",
+      "nerve_prediction": "symbol:chess.mjs:isAttacked",
+      "nerve_correct": true,
+      "flat_prediction": "symbol:chess.mjs:isAttacked",
+      "flat_correct": true,
+      "decision": "supported_candidate",
+      "payload_pieces": 956,
+      "full_history_pieces": 9043
+    },
+    {
+      "category": "paraphrase",
+      "query": "how the game finds squares threatened by enemy pieces",
+      "gold": "symbol:chess.mjs:isAttacked",
+      "nerve_prediction": "symbol:chess.mjs:pieces",
+      "nerve_correct": false,
+      "flat_prediction": "symbol:app.mjs:selectSquare",
+      "flat_correct": false,
+      "decision": "needs_confirmation",
+      "payload_pieces": 783,
+      "full_history_pieces": 9043
+    }
+  ]
+}

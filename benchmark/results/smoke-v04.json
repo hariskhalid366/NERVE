@@ -1,0 +1,2413 @@
+{
+  "summary": {
+    "evaluation_type": "DETERMINISTIC_SYNTHETIC_RETRIEVAL_DIAGNOSTIC_NOT_LLM_EVALUATION",
+    "dataset": "20 hand-authored artificial objects, 4 query styles each, 10 unknown and 10 unsupported queries",
+    "n_positive": 80,
+    "n_negative": 20,
+    "agent_sessions": "A writes, closes; B reopens SQLite",
+    "target_accuracy_top1": 0.8125,
+    "target_recall_at3": 0.8125,
+    "flat_target_top1": 0.8125,
+    "flat_target_recall_at3": 0.825,
+    "candidate_advisory_supported_fraction": 0.7875,
+    "candidate_advisory_correct_among_supported": 0.9841,
+    "unsupported_candidate_advisory_flagged_for_confirmation": 0.8,
+    "unknown_no_candidate_rate": 1.0,
+    "unsupported_no_candidate_rate": 0.0,
+    "negative_abstention_rate": 0.5,
+    "flat_negative_abstention_rate": 0.5,
+    "target_accuracy_by_query_kind": {
+      "label": {
+        "n": 20,
+        "nerve_top1": 1.0,
+        "flat_top1": 1.0
+      },
+      "alias": {
+        "n": 20,
+        "nerve_top1": 1.0,
+        "flat_top1": 1.0
+      },
+      "incident": {
+        "n": 20,
+        "nerve_top1": 1.0,
+        "flat_top1": 1.0
+      },
+      "paraphrase": {
+        "n": 20,
+        "nerve_top1": 0.25,
+        "flat_top1": 0.25
+      }
+    },
+    "context_evidence_recovered_top1": 0.8125,
+    "cross_session_exact_id_persistence": 1.0,
+    "cross_session_discovery_plus_fact_top1": 0.8125,
+    "full_history_context_proxy_pieces": 8008,
+    "avg_nerve_context_proxy_pieces": 662.9,
+    "context_payload_proxy_reduction": 0.9172,
+    "actual_llm_token_efficiency": "NOT_MEASURED",
+    "context_payload_proxy_units": "word_and_punctuation_pieces_not_model_tokens",
+    "actual_llm_context_recovery_accuracy": "NOT_MEASURED",
+    "actual_llm_cross_agent_task_success": "NOT_MEASURED",
+    "interpretation": "Measures exact evidence availability and heuristic retrieval on known synthetic fixtures; NOT real-model understanding, actual token consumption or true agent task success. Candidates are not model assertions; near-miss no-candidate rate measures over-retrieval, not hallucination."
+  },
+  "cases": [
+    {
+      "case_id": "T00Q0",
+      "kind": "label",
+      "expected_id": "billing:settlement",
+      "query": "Settlement queue",
+      "nerve_top1": "billing:settlement",
+      "nerve_top3": [
+        "billing:settlement",
+        "media:thumbnail",
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "billing:settlement",
+      "flat_top3": [
+        "billing:settlement",
+        "media:thumbnail",
+        "payments:refund"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 802,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T00Q1",
+      "kind": "alias",
+      "expected_id": "billing:settlement",
+      "query": "payouts pipeline",
+      "nerve_top1": "billing:settlement",
+      "nerve_top3": [
+        "billing:settlement",
+        "media:thumbnail"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "billing:settlement",
+      "flat_top3": [
+        "billing:settlement",
+        "media:thumbnail"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 718,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T00Q2",
+      "kind": "incident",
+      "expected_id": "billing:settlement",
+      "query": "ledger mismatch batch replay",
+      "nerve_top1": "billing:settlement",
+      "nerve_top3": [
+        "billing:settlement",
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "billing:settlement",
+      "flat_top3": [
+        "billing:settlement",
+        "payments:refund"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 724,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T00Q3",
+      "kind": "paraphrase",
+      "expected_id": "billing:settlement",
+      "query": "why did disbursement processing break?",
+      "nerve_top1": "billing:settlement",
+      "nerve_top3": [
+        "billing:settlement"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "billing:settlement",
+      "flat_top3": [
+        "billing:settlement"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 632,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T01Q0",
+      "kind": "label",
+      "expected_id": "identity:invite",
+      "query": "Invitation gate",
+      "nerve_top1": "identity:invite",
+      "nerve_top3": [
+        "identity:invite"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "identity:invite",
+      "flat_top3": [
+        "identity:invite"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 640,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T01Q1",
+      "kind": "alias",
+      "expected_id": "identity:invite",
+      "query": "team invite entry",
+      "nerve_top1": "identity:invite",
+      "nerve_top3": [
+        "identity:invite"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "identity:invite",
+      "flat_top3": [
+        "identity:invite"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T01Q2",
+      "kind": "incident",
+      "expected_id": "identity:invite",
+      "query": "expired invitation blank toast",
+      "nerve_top1": "identity:invite",
+      "nerve_top3": [
+        "identity:invite"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "identity:invite",
+      "flat_top3": [
+        "identity:invite"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 644,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T01Q3",
+      "kind": "paraphrase",
+      "expected_id": "identity:invite",
+      "query": "why couldn't the new member join?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 796,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T02Q0",
+      "kind": "label",
+      "expected_id": "search:synonyms",
+      "query": "Synonym index",
+      "nerve_top1": "search:synonyms",
+      "nerve_top3": [
+        "search:synonyms"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "search:synonyms",
+      "flat_top3": [
+        "search:synonyms"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 631,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T02Q1",
+      "kind": "alias",
+      "expected_id": "search:synonyms",
+      "query": "keyword matcher",
+      "nerve_top1": "search:synonyms",
+      "nerve_top3": [
+        "search:synonyms"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "search:synonyms",
+      "flat_top3": [
+        "search:synonyms"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 623,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T02Q2",
+      "kind": "incident",
+      "expected_id": "search:synonyms",
+      "query": "plural search stemming",
+      "nerve_top1": "search:synonyms",
+      "nerve_top3": [
+        "search:synonyms"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "search:synonyms",
+      "flat_top3": [
+        "search:synonyms"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 632,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T02Q3",
+      "kind": "paraphrase",
+      "expected_id": "search:synonyms",
+      "query": "why are plurals missing from lookup?",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T03Q0",
+      "kind": "label",
+      "expected_id": "calendar:recurrence",
+      "query": "Recurrence builder",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 634,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T03Q1",
+      "kind": "alias",
+      "expected_id": "calendar:recurrence",
+      "query": "repeat schedule drawer",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "notifications:quiet"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "notifications:quiet"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 717,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T03Q2",
+      "kind": "incident",
+      "expected_id": "calendar:recurrence",
+      "query": "monthly repeat leap day",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 638,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T03Q3",
+      "kind": "paraphrase",
+      "expected_id": "calendar:recurrence",
+      "query": "why are anniversary meetings missing?",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T04Q0",
+      "kind": "label",
+      "expected_id": "checkout:shipping",
+      "query": "Shipping estimator",
+      "nerve_top1": "checkout:shipping",
+      "nerve_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "checkout:shipping",
+      "flat_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 637,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T04Q1",
+      "kind": "alias",
+      "expected_id": "checkout:shipping",
+      "query": "postage calculator",
+      "nerve_top1": "checkout:shipping",
+      "nerve_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "checkout:shipping",
+      "flat_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T04Q2",
+      "kind": "incident",
+      "expected_id": "checkout:shipping",
+      "query": "zone rates stale address update",
+      "nerve_top1": "checkout:shipping",
+      "nerve_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "checkout:shipping",
+      "flat_top3": [
+        "checkout:shipping"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 644,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T04Q3",
+      "kind": "paraphrase",
+      "expected_id": "checkout:shipping",
+      "query": "why does delivery price ignore the new address?",
+      "nerve_top1": "checkout:shipping",
+      "nerve_top3": [
+        "checkout:shipping",
+        "notifications:quiet",
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "checkout:shipping",
+      "flat_top3": [
+        "checkout:shipping",
+        "notifications:quiet",
+        "calendar:recurrence"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 816,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T05Q0",
+      "kind": "label",
+      "expected_id": "dashboard:export",
+      "query": "Export worker",
+      "nerve_top1": "dashboard:export",
+      "nerve_top3": [
+        "dashboard:export"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "dashboard:export",
+      "flat_top3": [
+        "dashboard:export"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 636,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T05Q1",
+      "kind": "alias",
+      "expected_id": "dashboard:export",
+      "query": "csv job processor",
+      "nerve_top1": "dashboard:export",
+      "nerve_top3": [
+        "dashboard:export",
+        "backup:snapshot"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "dashboard:export",
+      "flat_top3": [
+        "dashboard:export",
+        "backup:snapshot"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 725,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T05Q2",
+      "kind": "incident",
+      "expected_id": "dashboard:export",
+      "query": "csv ordering reversed locale",
+      "nerve_top1": "dashboard:export",
+      "nerve_top3": [
+        "dashboard:export"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "dashboard:export",
+      "flat_top3": [
+        "dashboard:export"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 640,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T05Q3",
+      "kind": "paraphrase",
+      "expected_id": "dashboard:export",
+      "query": "why is the downloaded report ordered differently?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 795,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T06Q0",
+      "kind": "label",
+      "expected_id": "notifications:quiet",
+      "query": "Quiet hours",
+      "nerve_top1": "notifications:quiet",
+      "nerve_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "notifications:quiet",
+      "flat_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 635,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T06Q1",
+      "kind": "alias",
+      "expected_id": "notifications:quiet",
+      "query": "do not disturb scheduler",
+      "nerve_top1": "notifications:quiet",
+      "nerve_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "notifications:quiet",
+      "flat_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T06Q2",
+      "kind": "incident",
+      "expected_id": "notifications:quiet",
+      "query": "push escaped midnight",
+      "nerve_top1": "notifications:quiet",
+      "nerve_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "notifications:quiet",
+      "flat_top3": [
+        "notifications:quiet"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T06Q3",
+      "kind": "paraphrase",
+      "expected_id": "notifications:quiet",
+      "query": "why was my phone buzzing while I slept?",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T07Q0",
+      "kind": "label",
+      "expected_id": "inventory:reconcile",
+      "query": "Stock reconciliation",
+      "nerve_top1": "inventory:reconcile",
+      "nerve_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "inventory:reconcile",
+      "flat_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 635,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T07Q1",
+      "kind": "alias",
+      "expected_id": "inventory:reconcile",
+      "query": "warehouse adjustment task",
+      "nerve_top1": "inventory:reconcile",
+      "nerve_top3": [
+        "inventory:reconcile",
+        "tasks:dependencies"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "inventory:reconcile",
+      "flat_top3": [
+        "inventory:reconcile",
+        "tasks:dependencies"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 724,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T07Q2",
+      "kind": "incident",
+      "expected_id": "inventory:reconcile",
+      "query": "concurrent stock count overwritten",
+      "nerve_top1": "inventory:reconcile",
+      "nerve_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "inventory:reconcile",
+      "flat_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 637,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T07Q3",
+      "kind": "paraphrase",
+      "expected_id": "inventory:reconcile",
+      "query": "why were warehouse quantities inconsistent?",
+      "nerve_top1": "inventory:reconcile",
+      "nerve_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "inventory:reconcile",
+      "flat_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 635,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T08Q0",
+      "kind": "label",
+      "expected_id": "voice:transcript",
+      "query": "Transcript cleaner",
+      "nerve_top1": "voice:transcript",
+      "nerve_top3": [
+        "voice:transcript"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "voice:transcript",
+      "flat_top3": [
+        "voice:transcript"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 632,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T08Q1",
+      "kind": "alias",
+      "expected_id": "voice:transcript",
+      "query": "speech segment normalizer",
+      "nerve_top1": "voice:transcript",
+      "nerve_top3": [
+        "voice:transcript"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "voice:transcript",
+      "flat_top3": [
+        "voice:transcript"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T08Q2",
+      "kind": "incident",
+      "expected_id": "voice:transcript",
+      "query": "apostrophes transcript merge",
+      "nerve_top1": "voice:transcript",
+      "nerve_top3": [
+        "voice:transcript"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "voice:transcript",
+      "flat_top3": [
+        "voice:transcript"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T08Q3",
+      "kind": "paraphrase",
+      "expected_id": "voice:transcript",
+      "query": "why is the recorded dialogue malformed?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 800,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T09Q0",
+      "kind": "label",
+      "expected_id": "media:thumbnail",
+      "query": "Thumbnail pipeline",
+      "nerve_top1": "media:thumbnail",
+      "nerve_top3": [
+        "media:thumbnail",
+        "billing:settlement"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "media:thumbnail",
+      "flat_top3": [
+        "media:thumbnail",
+        "billing:settlement"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 713,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T09Q1",
+      "kind": "alias",
+      "expected_id": "media:thumbnail",
+      "query": "preview image queue",
+      "nerve_top1": "media:thumbnail",
+      "nerve_top3": [
+        "media:thumbnail",
+        "billing:settlement",
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "media:thumbnail",
+      "flat_top3": [
+        "media:thumbnail",
+        "billing:settlement",
+        "payments:refund"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 802,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T09Q2",
+      "kind": "incident",
+      "expected_id": "media:thumbnail",
+      "query": "portrait rotated thumbnails",
+      "nerve_top1": "media:thumbnail",
+      "nerve_top3": [
+        "media:thumbnail",
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "media:thumbnail",
+      "flat_top3": [
+        "media:thumbnail",
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 708,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T09Q3",
+      "kind": "paraphrase",
+      "expected_id": "media:thumbnail",
+      "query": "why do the photos display sideways?",
+      "nerve_top1": "notifications:quiet",
+      "nerve_top3": [
+        "notifications:quiet",
+        "calendar:recurrence",
+        "chat:mentions"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "notifications:quiet",
+      "flat_top3": [
+        "notifications:quiet",
+        "calendar:recurrence",
+        "chat:mentions"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 800,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T10Q0",
+      "kind": "label",
+      "expected_id": "profile:avatar",
+      "query": "Avatar uploader",
+      "nerve_top1": "profile:avatar",
+      "nerve_top3": [
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "profile:avatar",
+      "flat_top3": [
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T10Q1",
+      "kind": "alias",
+      "expected_id": "profile:avatar",
+      "query": "portrait image upload",
+      "nerve_top1": "profile:avatar",
+      "nerve_top3": [
+        "profile:avatar",
+        "media:thumbnail"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "profile:avatar",
+      "flat_top3": [
+        "profile:avatar",
+        "media:thumbnail"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 722,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T10Q2",
+      "kind": "incident",
+      "expected_id": "profile:avatar",
+      "query": "upload stalled weak wifi",
+      "nerve_top1": "profile:avatar",
+      "nerve_top3": [
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "profile:avatar",
+      "flat_top3": [
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 637,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T10Q3",
+      "kind": "paraphrase",
+      "expected_id": "profile:avatar",
+      "query": "why did my profile picture fail to save?",
+      "nerve_top1": "profile:avatar",
+      "nerve_top3": [
+        "profile:avatar",
+        "config:flags",
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "config:flags",
+      "flat_top3": [
+        "config:flags",
+        "payments:refund",
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": false,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 801,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T11Q0",
+      "kind": "label",
+      "expected_id": "maps:cluster",
+      "query": "Marker clusterer",
+      "nerve_top1": "maps:cluster",
+      "nerve_top3": [
+        "maps:cluster"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "maps:cluster",
+      "flat_top3": [
+        "maps:cluster"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 634,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T11Q1",
+      "kind": "alias",
+      "expected_id": "maps:cluster",
+      "query": "geographic pin grouping",
+      "nerve_top1": "maps:cluster",
+      "nerve_top3": [
+        "maps:cluster"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "maps:cluster",
+      "flat_top3": [
+        "maps:cluster"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T11Q2",
+      "kind": "incident",
+      "expected_id": "maps:cluster",
+      "query": "pins vanished high zoom",
+      "nerve_top1": "maps:cluster",
+      "nerve_top3": [
+        "maps:cluster"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "maps:cluster",
+      "flat_top3": [
+        "maps:cluster"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 632,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T11Q3",
+      "kind": "paraphrase",
+      "expected_id": "maps:cluster",
+      "query": "why are some places missing on the map?",
+      "nerve_top1": "tasks:dependencies",
+      "nerve_top3": [
+        "tasks:dependencies",
+        "billing:settlement",
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "maps:cluster",
+      "flat_top3": [
+        "maps:cluster",
+        "billing:settlement",
+        "calendar:recurrence"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": true,
+      "nerve_recall3": false,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 791,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T12Q0",
+      "kind": "label",
+      "expected_id": "config:flags",
+      "query": "Feature flag loader",
+      "nerve_top1": "config:flags",
+      "nerve_top3": [
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "config:flags",
+      "flat_top3": [
+        "config:flags"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 649,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T12Q1",
+      "kind": "alias",
+      "expected_id": "config:flags",
+      "query": "runtime toggles",
+      "nerve_top1": "config:flags",
+      "nerve_top3": [
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "config:flags",
+      "flat_top3": [
+        "config:flags"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T12Q2",
+      "kind": "incident",
+      "expected_id": "config:flags",
+      "query": "feature flags before login",
+      "nerve_top1": "config:flags",
+      "nerve_top3": [
+        "config:flags",
+        "backup:snapshot",
+        "dashboard:export"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "config:flags",
+      "flat_top3": [
+        "config:flags",
+        "backup:snapshot",
+        "dashboard:export"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 812,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T12Q3",
+      "kind": "paraphrase",
+      "expected_id": "config:flags",
+      "query": "why did another user's experiments appear?",
+      "nerve_top1": "chat:mentions",
+      "nerve_top3": [
+        "chat:mentions",
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "chat:mentions",
+      "flat_top3": [
+        "chat:mentions",
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 714,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T13Q0",
+      "kind": "label",
+      "expected_id": "documents:signature",
+      "query": "Signature pad",
+      "nerve_top1": "documents:signature",
+      "nerve_top3": [
+        "documents:signature"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "documents:signature",
+      "flat_top3": [
+        "documents:signature"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 638,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T13Q1",
+      "kind": "alias",
+      "expected_id": "documents:signature",
+      "query": "signing canvas",
+      "nerve_top1": "documents:signature",
+      "nerve_top3": [
+        "documents:signature"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "documents:signature",
+      "flat_top3": [
+        "documents:signature"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 624,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T13Q2",
+      "kind": "incident",
+      "expected_id": "documents:signature",
+      "query": "strokes shifted rotation",
+      "nerve_top1": "documents:signature",
+      "nerve_top3": [
+        "documents:signature"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "documents:signature",
+      "flat_top3": [
+        "documents:signature"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T13Q3",
+      "kind": "paraphrase",
+      "expected_id": "documents:signature",
+      "query": "why did the signed form look distorted?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "auth:devices",
+      "flat_top3": [
+        "auth:devices",
+        "calendar:recurrence",
+        "checkout:shipping"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 795,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T14Q0",
+      "kind": "label",
+      "expected_id": "metrics:anomaly",
+      "query": "Anomaly detector",
+      "nerve_top1": "metrics:anomaly",
+      "nerve_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "metrics:anomaly",
+      "flat_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T14Q1",
+      "kind": "alias",
+      "expected_id": "metrics:anomaly",
+      "query": "spike warning service",
+      "nerve_top1": "metrics:anomaly",
+      "nerve_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "metrics:anomaly",
+      "flat_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 628,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T14Q2",
+      "kind": "incident",
+      "expected_id": "metrics:anomaly",
+      "query": "holiday dips false alerts",
+      "nerve_top1": "metrics:anomaly",
+      "nerve_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "metrics:anomaly",
+      "flat_top3": [
+        "metrics:anomaly"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 631,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T14Q3",
+      "kind": "paraphrase",
+      "expected_id": "metrics:anomaly",
+      "query": "why did the monitoring alarm trigger on vacation?",
+      "nerve_top1": "billing:settlement",
+      "nerve_top3": [
+        "billing:settlement",
+        "calendar:recurrence",
+        "checkout:shipping"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "billing:settlement",
+      "flat_top3": [
+        "billing:settlement",
+        "calendar:recurrence",
+        "checkout:shipping"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 799,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T15Q0",
+      "kind": "label",
+      "expected_id": "backup:snapshot",
+      "query": "Snapshot job",
+      "nerve_top1": "backup:snapshot",
+      "nerve_top3": [
+        "backup:snapshot",
+        "dashboard:export"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "backup:snapshot",
+      "flat_top3": [
+        "backup:snapshot",
+        "dashboard:export"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 716,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T15Q1",
+      "kind": "alias",
+      "expected_id": "backup:snapshot",
+      "query": "nightly restore point",
+      "nerve_top1": "backup:snapshot",
+      "nerve_top3": [
+        "backup:snapshot"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "backup:snapshot",
+      "flat_top3": [
+        "backup:snapshot"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T15Q2",
+      "kind": "incident",
+      "expected_id": "backup:snapshot",
+      "query": "compressed backup checksum",
+      "nerve_top1": "backup:snapshot",
+      "nerve_top3": [
+        "backup:snapshot"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "backup:snapshot",
+      "flat_top3": [
+        "backup:snapshot"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T15Q3",
+      "kind": "paraphrase",
+      "expected_id": "backup:snapshot",
+      "query": "why could the recovery archive be corrupted?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 795,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T16Q0",
+      "kind": "label",
+      "expected_id": "payments:refund",
+      "query": "Refund handler",
+      "nerve_top1": "payments:refund",
+      "nerve_top3": [
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "payments:refund",
+      "flat_top3": [
+        "payments:refund"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 632,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T16Q1",
+      "kind": "alias",
+      "expected_id": "payments:refund",
+      "query": "return payments queue",
+      "nerve_top1": "payments:refund",
+      "nerve_top3": [
+        "payments:refund",
+        "billing:settlement",
+        "media:thumbnail"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "payments:refund",
+      "flat_top3": [
+        "payments:refund",
+        "billing:settlement",
+        "media:thumbnail"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 797,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T16Q2",
+      "kind": "incident",
+      "expected_id": "payments:refund",
+      "query": "duplicate refund webhook replay",
+      "nerve_top1": "payments:refund",
+      "nerve_top3": [
+        "payments:refund",
+        "billing:settlement"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "payments:refund",
+      "flat_top3": [
+        "payments:refund",
+        "billing:settlement"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 718,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T16Q3",
+      "kind": "paraphrase",
+      "expected_id": "payments:refund",
+      "query": "why was the customer reimbursed twice?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 794,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T17Q0",
+      "kind": "label",
+      "expected_id": "chat:mentions",
+      "query": "Mention resolver",
+      "nerve_top1": "chat:mentions",
+      "nerve_top3": [
+        "chat:mentions"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "chat:mentions",
+      "flat_top3": [
+        "chat:mentions"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 635,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T17Q1",
+      "kind": "alias",
+      "expected_id": "chat:mentions",
+      "query": "user ping finder",
+      "nerve_top1": "chat:mentions",
+      "nerve_top3": [
+        "chat:mentions",
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "chat:mentions",
+      "flat_top3": [
+        "chat:mentions",
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 712,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T17Q2",
+      "kind": "incident",
+      "expected_id": "chat:mentions",
+      "query": "mentions dotted display names",
+      "nerve_top1": "chat:mentions",
+      "nerve_top3": [
+        "chat:mentions"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "chat:mentions",
+      "flat_top3": [
+        "chat:mentions"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T17Q3",
+      "kind": "paraphrase",
+      "expected_id": "chat:mentions",
+      "query": "why didn't the colleague get notified?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 796,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T18Q0",
+      "kind": "label",
+      "expected_id": "auth:devices",
+      "query": "Device registry",
+      "nerve_top1": "auth:devices",
+      "nerve_top3": [
+        "auth:devices",
+        "documents:signature"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "auth:devices",
+      "flat_top3": [
+        "auth:devices",
+        "documents:signature"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 719,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T18Q1",
+      "kind": "alias",
+      "expected_id": "auth:devices",
+      "query": "trusted devices list",
+      "nerve_top1": "auth:devices",
+      "nerve_top3": [
+        "auth:devices"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "auth:devices",
+      "flat_top3": [
+        "auth:devices"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 644,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T18Q2",
+      "kind": "incident",
+      "expected_id": "auth:devices",
+      "query": "revoked device active connection",
+      "nerve_top1": "auth:devices",
+      "nerve_top3": [
+        "auth:devices",
+        "documents:signature",
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "auth:devices",
+      "flat_top3": [
+        "auth:devices",
+        "documents:signature",
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 805,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T18Q3",
+      "kind": "paraphrase",
+      "expected_id": "auth:devices",
+      "query": "why could a removed phone still sign in?",
+      "nerve_top1": "auth:devices",
+      "nerve_top3": [
+        "auth:devices",
+        "chat:mentions"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "auth:devices",
+      "flat_top3": [
+        "auth:devices",
+        "chat:mentions"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 722,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T19Q0",
+      "kind": "label",
+      "expected_id": "tasks:dependencies",
+      "query": "Dependency graph",
+      "nerve_top1": "tasks:dependencies",
+      "nerve_top3": [
+        "tasks:dependencies"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "tasks:dependencies",
+      "flat_top3": [
+        "tasks:dependencies"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T19Q1",
+      "kind": "alias",
+      "expected_id": "tasks:dependencies",
+      "query": "blocker map",
+      "nerve_top1": "tasks:dependencies",
+      "nerve_top3": [
+        "tasks:dependencies",
+        "maps:cluster"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "tasks:dependencies",
+      "flat_top3": [
+        "tasks:dependencies",
+        "maps:cluster"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 704,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T19Q2",
+      "kind": "incident",
+      "expected_id": "tasks:dependencies",
+      "query": "circular dependency import",
+      "nerve_top1": "tasks:dependencies",
+      "nerve_top3": [
+        "tasks:dependencies"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": true,
+      "flat_top1": "tasks:dependencies",
+      "flat_top3": [
+        "tasks:dependencies"
+      ],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": true,
+      "retrieved_context_proxy_pieces": 631,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "T19Q3",
+      "kind": "paraphrase",
+      "expected_id": "tasks:dependencies",
+      "query": "why are the tasks deadlocked?",
+      "nerve_top1": "calendar:recurrence",
+      "nerve_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "checkout:shipping",
+        "config:flags"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 793,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG00",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "copper asteroid telescope calibration",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG01",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "lunar beetles spectrogram",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG02",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "unidentified coral migration",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG03",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "quantum orchard pollen",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG04",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "glacier nitrogen microscope",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG05",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "peripheral telescope beacon",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG06",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "nebula gravity oven",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG07",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "submarine rainfall simulator",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG08",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "orphaned astronomy telescope",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "NEG09",
+      "kind": "unknown",
+      "expected_id": null,
+      "query": "zirconium comet engine",
+      "nerve_top1": null,
+      "nerve_top3": [],
+      "nerve_candidate_decision": "no_match",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": null,
+      "flat_top3": [],
+      "nerve_top1_correct": true,
+      "flat_top1_correct": true,
+      "nerve_recall3": true,
+      "flat_recall3": true,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 0,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS00",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "refund tax exemption certificate",
+      "nerve_top1": "payments:refund",
+      "nerve_top3": [
+        "payments:refund"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "payments:refund",
+      "flat_top3": [
+        "payments:refund"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS01",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "dashboard heatmap legend",
+      "nerve_top1": "dashboard:export",
+      "nerve_top3": [
+        "dashboard:export"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "dashboard:export",
+      "flat_top3": [
+        "dashboard:export"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 627,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS02",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "transcript language translation errors",
+      "nerve_top1": "voice:transcript",
+      "nerve_top3": [
+        "voice:transcript"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "voice:transcript",
+      "flat_top3": [
+        "voice:transcript"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS03",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "stock expiry barcode scanning",
+      "nerve_top1": "inventory:reconcile",
+      "nerve_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "inventory:reconcile",
+      "flat_top3": [
+        "inventory:reconcile"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 633,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS04",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "calendar holiday import",
+      "nerve_top1": "metrics:anomaly",
+      "nerve_top3": [
+        "metrics:anomaly",
+        "tasks:dependencies",
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "calendar:recurrence",
+      "flat_top3": [
+        "calendar:recurrence",
+        "metrics:anomaly",
+        "tasks:dependencies"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 788,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS05",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "avatar background blur",
+      "nerve_top1": "profile:avatar",
+      "nerve_top3": [
+        "profile:avatar"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "profile:avatar",
+      "flat_top3": [
+        "profile:avatar"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 630,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS06",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "signature biometric pressure levels",
+      "nerve_top1": "documents:signature",
+      "nerve_top3": [
+        "documents:signature"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "documents:signature",
+      "flat_top3": [
+        "documents:signature"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 636,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS07",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "quiet hours calendar synchronization",
+      "nerve_top1": "notifications:quiet",
+      "nerve_top3": [
+        "notifications:quiet",
+        "calendar:recurrence"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "notifications:quiet",
+      "flat_top3": [
+        "notifications:quiet",
+        "calendar:recurrence"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 719,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS08",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "feature flags billing subscription",
+      "nerve_top1": "config:flags",
+      "nerve_top3": [
+        "config:flags",
+        "metrics:anomaly"
+      ],
+      "nerve_candidate_decision": "supported_candidate",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "config:flags",
+      "flat_top3": [
+        "config:flags",
+        "metrics:anomaly"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 726,
+      "full_history_proxy_pieces": 8008
+    },
+    {
+      "case_id": "UNS09",
+      "kind": "unsupported",
+      "expected_id": null,
+      "query": "thumbnail OCR invoice extraction",
+      "nerve_top1": "media:thumbnail",
+      "nerve_top3": [
+        "media:thumbnail"
+      ],
+      "nerve_candidate_decision": "needs_confirmation",
+      "nerve_confident_top1_correct": false,
+      "flat_top1": "media:thumbnail",
+      "flat_top3": [
+        "media:thumbnail"
+      ],
+      "nerve_top1_correct": false,
+      "flat_top1_correct": false,
+      "nerve_recall3": false,
+      "flat_recall3": false,
+      "fact_evidence_found": false,
+      "retrieved_context_proxy_pieces": 629,
+      "full_history_proxy_pieces": 8008
+    }
+  ]
+}

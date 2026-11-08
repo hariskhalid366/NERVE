@@ -1,0 +1,269 @@
+{
+  "qualification": "Hand-authored stress probes on chess targets; not statistically independent, not LLM performance",
+  "positive_count": 24,
+  "nerve_top1_correct": 12,
+  "flat_top1_correct": 12,
+  "negative_count": 8,
+  "negative_no_candidate": 6,
+  "negative_needs_confirmation_or_no_match": 8,
+  "positive": [
+    {
+      "query": "Which routine rejects leaving my own king exposed?",
+      "target_id": "symbol:chess.mjs:legalMoves",
+      "nerve": "symbol:chess.mjs:legalMoves",
+      "baseline": "symbol:chess.mjs:insufficient",
+      "nerve_correct": true,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Find the validator responsible for legal chess choices",
+      "target_id": "symbol:chess.mjs:legalMoves",
+      "nerve": "symbol:chess.mjs:legalMoves",
+      "baseline": "symbol:app.mjs:render",
+      "nerve_correct": true,
+      "baseline_correct": false,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Where does a FEN string become a board position?",
+      "target_id": "symbol:chess.mjs:parseFen",
+      "nerve": "symbol:chess.mjs:parseFen",
+      "baseline": "symbol:chess.mjs:parseFen",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "The import notation was parsed into an impossible arrangement",
+      "target_id": "symbol:chess.mjs:parseFen",
+      "nerve": "symbol:chess.mjs:parseFen",
+      "baseline": "symbol:chess.mjs:isAttacked",
+      "nerve_correct": true,
+      "baseline_correct": false,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Undo failed to restore castling entitlement after moving a rook",
+      "target_id": "symbol:chess.mjs:apply",
+      "nerve": "symbol:chess.mjs:apply",
+      "baseline": "symbol:chess.mjs:apply",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Which transition mutates captured pawn handling?",
+      "target_id": "symbol:chess.mjs:apply",
+      "nerve": "symbol:app.mjs:showPromotion",
+      "baseline": "symbol:chess.mjs:apply",
+      "nerve_correct": false,
+      "baseline_correct": true,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Draw adjudication is triggered too early",
+      "target_id": "symbol:chess.mjs:gameStatus",
+      "nerve": "symbol:chess.mjs:insufficient",
+      "baseline": "symbol:chess.mjs:insufficient",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "The game does not end when a player is checkmated",
+      "target_id": "symbol:chess.mjs:gameStatus",
+      "nerve": "symbol:chess.mjs:gameStatus",
+      "baseline": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "The same configuration appears thrice but the game ignores the repetition",
+      "target_id": "symbol:chess.mjs:positionKey",
+      "nerve": "symbol:chess.mjs:gameStatus",
+      "baseline": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Which representation normalizes en passant availability for repeated states?",
+      "target_id": "symbol:chess.mjs:positionKey",
+      "nerve": "symbol:chess.mjs:apply",
+      "baseline": "symbol:chess.mjs:positionKey",
+      "nerve_correct": false,
+      "baseline_correct": true,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Tapping the wrong chessboard cell still changed the game",
+      "target_id": "symbol:app.mjs:selectSquare",
+      "nerve": "symbol:chess.mjs:gameStatus",
+      "baseline": "symbol:app.mjs:selectSquare",
+      "nerve_correct": false,
+      "baseline_correct": true,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Where is the selection input for chessboard squares handled?",
+      "target_id": "symbol:app.mjs:selectSquare",
+      "nerve": "symbol:app.mjs:selectSquare",
+      "baseline": "symbol:chess.mjs:insufficient",
+      "nerve_correct": true,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Where are new queen and knight choices displayed?",
+      "target_id": "symbol:app.mjs:showPromotion",
+      "nerve": "symbol:app.mjs:showPromotion",
+      "baseline": "symbol:app.mjs:showPromotion",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Advancing a pawn to the end should offer multiple outcomes",
+      "target_id": "symbol:app.mjs:showPromotion",
+      "nerve": "symbol:app.mjs:showPromotion",
+      "baseline": "symbol:app.mjs:showPromotion",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "The squares are not redrawn after taking back a turn",
+      "target_id": "symbol:app.mjs:render",
+      "nerve": "file:index.html",
+      "baseline": "symbol:chess.mjs:positionKey",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Find the function painting positions on screen",
+      "target_id": "symbol:app.mjs:render",
+      "nerve": "symbol:chess.mjs:findMove",
+      "baseline": "file:style.css",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "At phone width the playing area becomes stretched",
+      "target_id": "file:style.css",
+      "nerve": null,
+      "baseline": "symbol:chess.mjs:gameStatus",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "no_match"
+    },
+    {
+      "query": "Which stylesheet defines the grid sizing?",
+      "target_id": "file:style.css",
+      "nerve": "file:style.css",
+      "baseline": "file:style.css",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Screen readers cannot announce whose move it is",
+      "target_id": "file:index.html",
+      "nerve": "file:index.html",
+      "baseline": "file:index.html",
+      "nerve_correct": true,
+      "baseline_correct": true,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Which document contains the game elements loaded into the browser?",
+      "target_id": "file:index.html",
+      "nerve": "symbol:chess.mjs:gameStatus",
+      "baseline": "symbol:app.mjs:selectSquare",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Only two kings remain and the game should be tied",
+      "target_id": "symbol:chess.mjs:insufficient",
+      "nerve": "symbol:chess.mjs:insufficient",
+      "baseline": "symbol:chess.mjs:parseFen",
+      "nerve_correct": true,
+      "baseline_correct": false,
+      "decision": "supported_candidate"
+    },
+    {
+      "query": "Which check handles no possible mating sequence?",
+      "target_id": "symbol:chess.mjs:insufficient",
+      "nerve": "symbol:chess.mjs:legalMoves",
+      "baseline": "symbol:chess.mjs:insufficient",
+      "nerve_correct": false,
+      "baseline_correct": true,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "The monarch moved through a threatened square during castling",
+      "target_id": "symbol:chess.mjs:isAttacked",
+      "nerve": "symbol:chess.mjs:apply",
+      "baseline": "symbol:chess.mjs:isAttacked",
+      "nerve_correct": false,
+      "baseline_correct": true,
+      "decision": "needs_confirmation"
+    },
+    {
+      "query": "Where are enemy-controlled tiles detected?",
+      "target_id": "symbol:chess.mjs:isAttacked",
+      "nerve": null,
+      "baseline": "symbol:chess.mjs:insufficient",
+      "nerve_correct": false,
+      "baseline_correct": false,
+      "decision": "no_match"
+    }
+  ],
+  "negative": [
+    {
+      "query": "Which Stripe payment webhook retries failed charges?",
+      "decision": "no_match",
+      "no_candidate": true
+    },
+    {
+      "query": "Explain the Kubernetes autoscaler in our deployment",
+      "decision": "no_match",
+      "no_candidate": true
+    },
+    {
+      "query": "Find the authentication login token refresh middleware",
+      "decision": "needs_confirmation",
+      "no_candidate": false
+    },
+    {
+      "query": "Where is the NPC neural chess opponent model?",
+      "decision": "needs_confirmation",
+      "no_candidate": false
+    },
+    {
+      "query": "What database migration created user subscriptions?",
+      "decision": "no_match",
+      "no_candidate": true
+    },
+    {
+      "query": "Locate the telemetry for GPS satellite tracking",
+      "decision": "no_match",
+      "no_candidate": true
+    },
+    {
+      "query": "Where are multiplayer chat messages persisted?",
+      "decision": "no_match",
+      "no_candidate": true
+    },
+    {
+      "query": "How are PDF invoices produced after checkout?",
+      "decision": "no_match",
+      "no_candidate": true
+    }
+  ]
+}

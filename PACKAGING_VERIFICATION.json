@@ -1,0 +1,35 @@
+{
+  "package_version": "v0.8.0-rc2 + comprehensive Codex handoff",
+  "packaged_at_utc": "2026-11-08",
+  "source_archive": "NERVE-v0.8.0-rc2-repeatability-tested.zip",
+  "test_rerun": {
+    "python_tests": "73/73 passed",
+    "chess_js_tests": "16/16 passed",
+    "tasklist_tests": "5/5 passed",
+    "python": "3.13.5",
+    "node": "v22.16.0",
+    "full_randomized_benchmarks_rerun": false
+  },
+  "wheel_install_test": {
+    "offline_pip_install": true,
+    "init": true,
+    "remember": true,
+    "brief": true
+  },
+  "historical_archives_included": "selected research documentation and public benchmark JSON from 8 previous local releases",
+  "history_document_count": 142,
+  "excluded_sensitive_paths_found": [],
+  "high_confidence_credential_pattern_matches": {
+    "github_token": [],
+    "openai_key": [],
+    "aws_key_id": [],
+    "pem_private_key": []
+  },
+  "publication_verified": false,
+  "caveats": [
+    "String scan cannot certify absence of secrets",
+    "Provider token savings and real cross-agent task success not measured",
+    "Research history includes recorded results not independently rerun this turn",
+    "100% synthetic exact-match accuracy is not general correctness"
+  ]
+}
