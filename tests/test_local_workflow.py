@@ -26,14 +26,14 @@ class LocalWorkflowTests(unittest.TestCase):
     def test_cursor_host_config_is_scoped_to_explicit_project(self):
         conf = cursor_config(self.root)
         command = conf['mcpServers']['nerve-local']
-        self.assertEqual(command['args'][3], str(self.root))
+        self.assertEqual(Path(command['args'][3]).resolve(), self.root.resolve())
         self.assertIn('stdio', command['type'])
 
     def test_cursor_merge_preserves_existing_servers(self):
         folder = self.root / '.cursor'; folder.mkdir()
         path = folder / 'mcp.json'
         path.write_text(json.dumps({'mcpServers': {'existing': {'command': 'python'}}}))
-        self.assertEqual(save_cursor_config(self.root), path)
+        self.assertEqual(save_cursor_config(self.root).resolve(), path.resolve())
         combined = json.loads(path.read_text())
         self.assertIn('existing', combined['mcpServers'])
         self.assertIn('nerve-local', combined['mcpServers'])
@@ -83,7 +83,8 @@ class LocalWorkflowTests(unittest.TestCase):
         self._git('init','-q')
         path = install_post_commit_hook(self.root)
         self.assertTrue(path.is_file())
-        self.assertTrue(path.stat().st_mode & 0o100)
+        if sys.platform != 'win32':
+            self.assertTrue(path.stat().st_mode & 0o100)
         with self.assertRaises(ValueError): install_post_commit_hook(self.root)
 
     def test_multiple_agent_connections_can_write_shared_notes(self):

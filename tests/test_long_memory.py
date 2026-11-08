@@ -53,11 +53,15 @@ class LongMemoryRegression(unittest.TestCase):
             n.event('old','bug','lavenderlute ancient incident')
             n.remember('clockworkstar ancient decision',target_id='old')
         db=self.root/'.nerve'/'memory.sqlite3'
-        with sqlite3.connect(db) as c:
+        c=sqlite3.connect(db)
+        try:
             for name in ('nerve_events_fts','nerve_memories_fts'):
                 c.execute('DROP TABLE IF EXISTS '+name)
             for name in ('nerve_events_fts_ins','nerve_events_fts_del','nerve_memories_fts_ins','nerve_memories_fts_del'):
                 c.execute('DROP TRIGGER IF EXISTS '+name)
+            c.commit()
+        finally:
+            c.close()
         with Nerve(self.root) as n:
             self.assertEqual(n.resolve('lavenderlute ancient')['candidates'][0]['target_id'],'old')
             self.assertEqual(n.resolve('clockworkstar ancient')['candidates'][0]['target_id'],'old')
@@ -68,10 +72,14 @@ class LongMemoryRegression(unittest.TestCase):
             n.event('old','issue','lemondusk old event')
             n.remember('nightharbor old memory',target_id='old')
         db=self.root/'.nerve'/'memory.sqlite3'
-        with sqlite3.connect(db) as c:
+        c=sqlite3.connect(db)
+        try:
             c.execute('DROP TRIGGER IF EXISTS nerve_memories_fts_ins')
             c.execute('DROP TRIGGER IF EXISTS nerve_memories_fts_del')
             c.execute('DROP TABLE nerve_memories_fts')
+            c.commit()
+        finally:
+            c.close()
         with Nerve(self.root) as n:
             self.assertEqual(n.resolve('lemondusk')['candidates'][0]['target_id'],'old')
             self.assertEqual(n.resolve('nightharbor')['candidates'][0]['target_id'],'old')

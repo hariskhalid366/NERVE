@@ -28,7 +28,7 @@ class ChessIntegration(unittest.TestCase):
         run=subprocess.run(['node','--test','tests/rules.test.mjs'], cwd=CHESS,
                            text=True,capture_output=True,timeout=20)
         self.assertEqual(run.returncode,0,run.stdout+'\n'+run.stderr)
-        self.assertIn('# pass 16',run.stdout)
+        self.assertRegex(run.stdout, r'(?:#|\N{INFORMATION SOURCE}) pass 16')
 
     def test_history_uses_descriptive_evidence(self):
         with tempfile.TemporaryDirectory() as d:
